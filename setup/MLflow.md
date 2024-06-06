@@ -1,4 +1,4 @@
-## Manage your machine learning lifecycle with MLflow and Amazon SageMaker
+## Manage your machine learning lifecycle with MLflow
 
 ### Overview
 
