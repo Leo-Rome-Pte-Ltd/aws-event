@@ -40,3 +40,9 @@ source .env
 cdk bootstrap aws://${AWS_ACCOUNT_ID}/${AWS_DEFAULT_REGION}
 cdk deploy --parameters ProjectName=mlflow --require-approval never
 ```
+
+The stack will take a few minutes to launch the MLflow server on AWS Fargate, with an S3 bucket and a MySQL database on
+RDS. You can then use the load balancer URI present in the stack outputs to access the MLflow UI:
+
+![](img/load-balancer.png)
+![](img/mlflow-interface.png)
