@@ -1,22 +1,16 @@
 # Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 # SPDX-License-Identifier: MIT-0
 
-from aws_cdk import (
-    aws_ec2 as ec2,
-    aws_s3 as s3,
-    aws_ecs as ecs,
-    aws_rds as rds,
-    aws_iam as iam,
-    aws_secretsmanager as sm,
-    aws_ecs_patterns as ecs_patterns,
-    App,
-    Stack,
-    CfnParameter,
-    CfnOutput,
-    Aws,
-    RemovalPolicy,
-    Duration,
-)
+import uuid
+
+from aws_cdk import App, Aws, CfnOutput, CfnParameter, Duration, RemovalPolicy, Stack
+from aws_cdk import aws_ec2 as ec2
+from aws_cdk import aws_ecs as ecs
+from aws_cdk import aws_ecs_patterns as ecs_patterns
+from aws_cdk import aws_iam as iam
+from aws_cdk import aws_rds as rds
+from aws_cdk import aws_s3 as s3
+from aws_cdk import aws_secretsmanager as sm
 from constructs import Construct
 
 
@@ -30,8 +24,7 @@ class MLflowStack(Stack):
         db_name = "mlflowdb"
         port = 3306
         username = "master"
-        bucket_name = f"{project_name_param.value_as_string}-artifacts-{Aws.ACCOUNT_ID}"
-        container_repo_name = "mlflow-containers"
+        bucket_name = f"{project_name_param.value_as_string}-artifacts-{Aws.ACCOUNT_ID}-{uuid.uuid4().hex[:8]}"
         cluster_name = "mlflow"
         service_name = "mlflow"
 
