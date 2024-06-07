@@ -163,3 +163,6 @@ cython_debug/
 
 # AWS CDK
 cdk.out
+
+# LLM credentials file
+mlflow-deployment.yaml

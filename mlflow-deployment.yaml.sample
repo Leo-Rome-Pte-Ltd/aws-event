@@ -1,0 +1,25 @@
+endpoints:
+  - name: completions
+    endpoint_type: llm/v1/completions
+    model:
+      provider: bedrock
+      name: anthropic.claude-v2:1
+      config:
+        aws_config:
+          aws_region: ''
+          aws_secret_access_key: ''
+          aws_access_key_id: ''
+
+  - name: embeddings
+    endpoint_type: llm/v1/embeddings
+    model:
+      provider: openai
+      name: text-embedding-ada-002
+      config:
+        aws_config:
+          openai_api_key: ''
+          openai_api_type: ''
+          openai_api_base: ''
+          openai_api_version: ''
+          openai_deployment_name: ''
+          openai_organization: ''
