@@ -166,3 +166,6 @@ cdk.out
 
 # LLM credentials file
 mlflow-deployment.yaml
+
+# MLflow artifacts
+mlruns

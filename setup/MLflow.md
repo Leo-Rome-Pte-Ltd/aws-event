@@ -25,7 +25,7 @@ To go through this example, make sure you have the following:
 
 Execute the following commands to install CDK and make sure you have the right dependencies:
 
-```
+```bash
 npm install -g aws-cdk@2.51.1
 python3 -m venv .venv
 source .venv/bin/activate
@@ -34,7 +34,7 @@ pip3 install -r requirements.txt
 
 Once this is installed, you can execute the following commands to deploy the inference service into your account:
 
-```
+```bash
 cd setup
 source .env
 cdk bootstrap aws://${AWS_ACCOUNT_ID}/${AWS_DEFAULT_REGION}
@@ -46,3 +46,12 @@ RDS. You can then use the load balancer URI present in the stack outputs to acce
 
 ![](img/load-balancer.png)
 ![](img/mlflow-interface.png)
+
+### Cleaning up
+
+To clean up the resources created by the stack, you can execute the following command:
+
+```bash
+cd setup
+cdk destroy --parameters ProjectName=mlflow --require-approval never
+```

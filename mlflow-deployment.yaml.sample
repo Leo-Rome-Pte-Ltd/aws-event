@@ -3,23 +3,33 @@ endpoints:
     endpoint_type: llm/v1/completions
     model:
       provider: bedrock
-      name: anthropic.claude-v2:1
+      name: please-change-me
       config:
         aws_config:
           aws_region: ''
           aws_secret_access_key: ''
           aws_access_key_id: ''
 
+  - name: chat
+    endpoint_type: llm/v1/chat
+    model:
+      provider: openai
+      name: please-change-me
+      config:
+        openai_api_key: ''
+        openai_api_type: ''
+        openai_api_base: ''
+        openai_api_version: ''
+        openai_deployment_name: ''
+
   - name: embeddings
     endpoint_type: llm/v1/embeddings
     model:
       provider: openai
-      name: text-embedding-ada-002
+      name: please-change-me
       config:
-        aws_config:
-          openai_api_key: ''
-          openai_api_type: ''
-          openai_api_base: ''
-          openai_api_version: ''
-          openai_deployment_name: ''
-          openai_organization: ''
+        openai_api_key: ''
+        openai_api_type: ''
+        openai_api_base: ''
+        openai_api_version: ''
+        openai_deployment_name: ''
